@@ -1,14 +1,38 @@
+<%# Navigation links to: %>
+  <%# home/ %>
+  <%# home/resume %>
+  <%# category GET  ||  /categories/:id(.:format)  ||  categories#show %>
+<%# Links to login page => new_gdangers GET  ||  //gdangers/new(.:format)  ||  /gdangers#new %>
+
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>LGRailsSite</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <title><%= @title %></title>
+  <%= stylesheet_link_tag    'application' %>
+  <link href="laurengranger.ico" rel="shortcut icon" type="image/png">
 </head>
-<body>
 
-<%= yield %>
+<header>
+  <h1><%= @title %></h1>
+  <nav>
+    <a href="/">home</a>
+    <!-- <a href="/resume">resume</a> -->
+    <a href="/projects">projects</a>
+    <a href="/code">code</a>
+    <a href="/social_justice">social justice</a>
+    <a href="/food">food</a>
+    <a href="/outside">outside</a>
+    <a href="/other">other</a>
+  </nav>
+</header>
 
+<body class="main">
+  <%= yield %>
 </body>
+
+<footer>
+  <%= "Lauren Granger" %> <a href="/gdangers/new">|</a> <%= "copyright #{Time.now.year}" %>
+</footer>
+
 </html>

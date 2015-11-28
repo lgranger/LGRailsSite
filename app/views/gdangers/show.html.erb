@@ -1,0 +1,16 @@
+<%# Shows all posts avaliable to edit %>
+<%# Links to edit page for a given post => edit_gdangers_post GET  ||  /gdangers/posts/:id/edit(.:format)  ||  posts#edit %>
+<%# Link to create a new post => new_gdangers_post GET  ||  /gdangers/posts/new(.:format)  ||  posts#new %>
+
+<% if @login_allowed == true %>
+  <% @posts.each do |post| %>
+    <h3>
+      <a href="/gdangers/posts/<%= post.id %>/edit">
+      <%= post.title %>: date = <%= post.pub_dat.month %>/<%= post.pub_dat.year %></a>
+    </h3>
+  <% end %>
+<% else %>
+  <h3>
+  You are not Lauren. Go away.
+  </h3>
+<% end %>

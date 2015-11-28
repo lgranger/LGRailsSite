@@ -1,1 +1,27 @@
-Welcome to Lauren Granger.com
+<%# This is the home page of the site. It shows post preveiws in a square grid. %>
+<%# Links to individual posts =>  category_post GET  ||  /categories/:category_id/posts/:id(.:format)  ||  posts#show%>
+
+<div>
+
+<% @posts.each do |post| %>
+
+<% @post_title = post.title %>
+<% @category = Category.find(post.category_id).name %>
+<% @tags = post.tags.each {|t| print "##{t.name}"} %>
+<% @date = post.pub_dat %>
+
+<% @post_image = "images/category_defaults/#{Category.find(post.category_id).name}.jpg" %>
+<% end %>
+
+<div class="post_cube" style="background-image: url(<%= @post_image %>)">
+  <h3 class="post_cube_top_text">
+    <%= @post_title %>
+  </h3>
+  <h5 class="post_cube_bottom_text">
+    <%= @category %>
+    <%= @tags %>
+    <%= @date.year %>
+  </h5>
+</div>
+
+</div>
