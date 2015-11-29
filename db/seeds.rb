@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-categories = Category.create([{ name: 'Code' }, { name: 'Social Justice' }, { name: 'Outside' }, { name: 'Food' }, { name: 'Other' }, { name: 'Projects' }])
+categories = Category.create([{ name: 'Code' }, { name: 'Social Justice' }, { name: 'Outside' }, { name: 'Food' }, { name: 'Projects' }, { name: 'Other' }])
 
 tags = Tag.create([{ name: 'ruby' }, { name: 'rails' }, { name: 'css' }, { name: 'front-end' }, { name: 'penny' }, { name: 'vegan' }, { name: 'seattle' }, { name: 'hike' }])
 

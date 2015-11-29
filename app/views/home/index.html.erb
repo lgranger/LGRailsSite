@@ -7,11 +7,10 @@
 
 <% @post_title = post.title %>
 <% @category = Category.find(post.category_id).name %>
-<% @tags = post.tags.each {|t| print "##{t.name}"} %>
+<% @tags = post.tags.map {|t| t.name} %>
 <% @date = post.pub_dat %>
 
 <% @post_image = "images/category_defaults/#{Category.find(post.category_id).name}.jpg" %>
-<% end %>
 
 <div class="post_cube" style="background-image: url(<%= @post_image %>)">
   <h3 class="post_cube_top_text">
@@ -19,9 +18,11 @@
   </h3>
   <h5 class="post_cube_bottom_text">
     <%= @category %>
-    <%= @tags %>
+    <% @tags.each do |t|  %>
+      <%= " ##{t}" %>
+    <% end %>
     <%= @date.year %>
   </h5>
 </div>
-
+<% end %>
 </div>

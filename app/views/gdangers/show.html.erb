@@ -3,6 +3,7 @@
 <%# Link to create a new post => new_gdangers_post GET  ||  /gdangers/posts/new(.:format)  ||  posts#new %>
 
 <% if @login_allowed == true %>
+  <%= link_to 'New Post', new_gdangers_post_path %>
   <% @posts.each do |post| %>
     <h3>
       <a href="/gdangers/posts/<%= post.id %>/edit">

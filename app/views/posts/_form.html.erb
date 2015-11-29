@@ -1,0 +1,46 @@
+<% if @login_allowed == true %>
+
+<%= form_for @post, url: {action: @action} do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <br>
+    <%= f.label :content %>
+    <%= text_area_tag(:content, @post.content, size: "200x30") %>
+
+    <fieldset>
+      <legend>Categories</legend>
+
+      <label><input type="radio" name="category" value="1">Code</label>
+      <label><input type="radio" name="category" value="2">Social Justice</label>
+      <label><input type="radio" name="category" value="3">Outside</label>
+      <label><input type="radio" name="category" value="4">Food</label>
+      <label><input type="radio" name="category" value="5">Projects</label>
+      <label><input type="radio" name="category" value="6">Other</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Tags</legend>
+
+      <div class="tags">
+        <label><input type="checkbox" name="tags[]" value="ruby">ruby</label>
+        <label><input type="checkbox" name="tags[]" value="html5">html5</label>
+        <label><input type="checkbox" name="tags[]" value="css">css</label>
+      </div>
+
+      <div class="tags">
+        <label><input type="checkbox" name="tags[]" value="vegan">vegan</label>
+        <label><input type="checkbox" name="tags[]" value="hikes">hikes</label>
+        <label><input type="checkbox" name="tags[]" value="seattle">seattle</label>
+      </div>
+
+    </fieldset>
+    <%= f.submit 'submit' %>
+<% end %>
+
+<% else %>
+  <h3>
+  You are not Lauren. Go away.
+  </h3>
+<% end %>
