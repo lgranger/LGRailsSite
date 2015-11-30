@@ -23,9 +23,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
-    edit_passcode = "pennypeaches"
+    update_post = Post.find(params[:id])
+    update_post.update(content: params[:content], category_id: params[:category_id], pub_dat: Time.now, :tags => Tag.where(:id => params[:tags]))
     redirect_to "/gdangers"
   end
 

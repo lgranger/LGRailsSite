@@ -28,7 +28,6 @@
       <legend>Tags</legend>
       <% tag_ids = @post.tags.map {|n| n.id} %>
         <% @tags.each do |tag| %>
-        <%# binding.pry %>
           <% if tag_ids.include?(tag.id) %>
             <%= check_box_tag "tags[]", "#{tag.id}", :checked %>
             <%= label_tag "tags[]", "#{tag.name}" %>
