@@ -13,16 +13,31 @@
       <legend>Categories</legend>
 
       <% @categories.each do |cat| %>
-      <label><input type="radio" name="category" value="<%= cat.id %>"><%= cat.name %></label>
+        <% if @post.category_id == cat.id %>
+          <%= radio_button_tag(:category_id, "#{cat.id}", :checked)%>
+          <%= label_tag(:category_id, "#{cat.name}") %>
+        <% else %>
+          <%= radio_button_tag(:category_id, "#{cat.id}")%>
+          <%= label_tag(:category_id, "#{cat.name}") %>
+        <% end %>
       <% end %>
+
     </fieldset>
 
     <fieldset>
       <legend>Tags</legend>
-
+      <% tag_ids = @post.tags.map {|n| n.id} %>
         <% @tags.each do |tag| %>
-        <label><input type="checkbox" name="tags[]" value="<%= tag.id %>"><%= tag.name %></label>
+        <%# binding.pry %>
+          <% if tag_ids.include?(tag.id) %>
+            <%= check_box_tag "tags[]", "#{tag.id}", :checked %>
+            <%= label_tag "tags[]", "#{tag.name}" %>
+          <% else %>
+            <%= check_box_tag "tags[]", "#{tag.id}" %>
+            <%= label_tag "tags[]", "#{tag.name}" %>
+          <% end %>
         <% end %>
+
 
     </fieldset>
     <%= f.submit 'submit' %>

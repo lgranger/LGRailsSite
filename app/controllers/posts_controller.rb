@@ -9,7 +9,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create()
+    new_post = Post.create(post_params)
+    new_post.update(content: params[:content], category_id: params[:category_id], pub_dat: Time.now, :tags => Tag.where(:id => params[:tags]))
+    redirect_to "/gdangers"
   end
 
   def edit
@@ -23,14 +25,14 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     post.update(post_params)
-    @login_allowed = true
+    edit_passcode = "pennypeaches"
     redirect_to "/gdangers"
   end
 
   private
 
   def post_params
-    params.require(:post).permit([:title, :content, :category_id, :tags])
+    params.require(:post).permit([:title])
   end
 
 end
