@@ -1,2 +1,19 @@
 <%# Displays the page of a given post %>
 <%# links back to home and to catagorys are handled by the applicaiton layout %>
+<div class="main_content">
+
+<h3><%= @post.content %></h3>
+<h2>
+  -Lauren
+  <% @date = @post.pub_dat %>
+  <%= @date.month %>/<%= @date.day %>/<%= @date.year %>
+</h2>
+<p>
+  <%= Category.find(@post.category_id).name %>
+  <% @tags = @post.tags.map {|t| t.name} %>
+  <% @tags.each do |t|  %>
+    <%= " ##{t}" %>
+  <% end %>
+</p>
+
+</div>

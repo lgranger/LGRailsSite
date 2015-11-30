@@ -89,26 +89,16 @@ nav a:hover {
   font-family: Covered By Your Grace, sans-serif;
 }
 
+h3 {
+  font-size: 20px;
+}
+
 .main {
   background-color: #B7C5E5;
-  /*padding: 20 20;*/
 }
 
-.post_cube {
-  color: white;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  margin: 10px;
-  width: 250px;
-  height: 250px;
-}
-
-.post_cube_bottom_text {
-  -webkit-filter: saturate(40%);
-  position: absolute;
-  bottom: 0;
-  text-align: center;
+.main_content {
+  padding-left: 20px;
 }
 
 div {

@@ -28,6 +28,11 @@ class PostsController < ApplicationController
     redirect_to "/gdangers"
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @title = @post.title
+  end
+
   private
 
   def post_params
