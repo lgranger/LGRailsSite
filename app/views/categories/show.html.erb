@@ -1,0 +1,19 @@
+<div class="main_content">
+
+<% @posts.each do |post| %>
+
+<% @category = Category.find(post.category_id).name %>
+<% @tags = post.tags.map {|t| t.name} %>
+<% @date = post.pub_dat %>
+
+  <h3><a href="/categories/<%= post.category_id %>/posts/<%= post.id %>">
+    <%= post.title %>:
+    <em><%= @category %>
+    <% @tags.each do |t|  %>
+      <%= " ##{t}" %>
+    <% end %>
+    <%= @date.month %>/<%= @date.day %>/<%= @date.year %></em>
+   </a></h3>
+<br>
+<% end %>
+</div>

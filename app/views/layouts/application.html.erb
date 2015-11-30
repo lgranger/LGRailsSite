@@ -17,13 +17,13 @@
   <h1><%= @title %></h1>
   <nav>
     <a href="/">home</a>
-    <!-- <a href="/resume">resume</a>
-    <a href="/projects">projects</a>
-    <a href="/code">code</a>
-    <a href="/social_justice">social justice</a>
-    <a href="/food">food</a>
-    <a href="/outside">outside</a>
-    <a href="/other">other</a> -->
+    <%= link_to "code", category_path(1) %>
+    <%= link_to "social justice", category_path(2) %>
+    <%= link_to "outside", category_path(3) %>
+    <%= link_to "food", category_path(4) %>
+    <%= link_to "projects", category_path(5) %>
+    <%= link_to "other", category_path(6) %>
+
   </nav>
 </header>
 
