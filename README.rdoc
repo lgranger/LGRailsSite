@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Synopsis
 
-Things you may want to cover:
+LGRailsSite is a personal blog site with a single user login. The structure consists of posts which each have one category and may have multiple tags.
 
-* Ruby version
+The intent is to provide a clean homebase for a personal blog that also serves as a resume/landing spot for a new-to-development person to show of their skills and their personality.
 
-* System dependencies
+Future features will include:
+* Functional login
+* Ability to sort based on tags
+* Grid-style homepage showing each post as a cube with a background image, title, category & tags
+* Page for interactive resume/cv
 
-* Configuration
+______________________________________
 
-* Database creation
+* Ruby version 2.2.3
+* Gemset & Gemfile are provided
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+______________________________________
